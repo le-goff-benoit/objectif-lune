@@ -65,6 +65,7 @@
       flex-grow: 1;
       text-align: center;
       font-size: inherit;
+      font-weight: 700;
       background-color: black;
       border-radius: $border-radius-normal;
       color: white;
@@ -75,17 +76,35 @@
         cursor: pointer;
       }
     }
-    .form__submit--outline {
-      @extend .form__submit;
-      font-size: 0.8rem;
-      text-decoration: none;
-      background-color: white;
-      color: black;
+    .form__sublinks {
+      display: flex;
+      justify-content: center;
 
-      &:hover {
-        text-decoration: underline;
-        background-color: inherit;
+      .form__submit--outline {
+        @extend .form__submit;
+        font-size: 0.8rem;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+
+        &:hover {
+          text-decoration: underline;
+          background-color: inherit;
+        }
+      }
+      .form__submit--help {
+        @extend .form__submit;
+        font-size: 0.8rem;
+        text-decoration: none;
+        background-color: white;
+        color: red;
+
+        &:hover {
+          text-decoration: underline;
+          background-color: inherit;
+        }
       }
     }
+
   }
 }

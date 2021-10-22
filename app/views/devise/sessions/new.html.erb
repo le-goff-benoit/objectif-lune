@@ -15,9 +15,12 @@
       <%= f.password_field :password, autocomplete: "current-password", :class => "form__input", required: true %>
     </div>
 
-      <div class="form__links">
-        <%= f.submit "Je me connecte", :class => "form__submit" %>
+    <div class="form__links">
+      <%= f.submit "Je m'inscris", :class => "form__submit" %>
+      <div class="form__sublinks">
         <%= render "devise/shared/links" %>
+        <%= link_to "J'ai besoin d'aide", new_contact_path, :class => "form__submit--help" %>
       </div>
+    </div>
   <% end %>
 </div>

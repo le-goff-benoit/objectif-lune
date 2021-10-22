@@ -30,7 +30,10 @@
 
   <div class="form__links">
     <%= f.submit "Je m'inscris", :class => "form__submit" %>
-    <%= render "devise/shared/links" %>
+    <div class="form__sublinks">
+      <%= render "devise/shared/links" %>
+      <%= link_to "J'ai besoin d'aide", new_contact_path, :class => "form__submit--help" %>
+    </div>
   </div>
   <% end %>
 </div>
