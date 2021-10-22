@@ -1,4 +1,4 @@
-.form__container {
+.form__background {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -6,9 +6,8 @@
   justify-content: center;
 }
 .form {
+  @extend .form__container;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
-  width: 30vw;
-  border-radius: $border-radius-normal;
   padding: $padding-normal;
   font-size: inherit;
   display: flex;
@@ -27,6 +26,7 @@
     }
     .form__subtitle {
       font-size: 0.8rem;
+      margin-top: 0.4rem;
       text-align: center;
       color: grey;
       font-weight: 300;
