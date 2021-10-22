@@ -3,7 +3,7 @@
     <div class="form__titles">
       <span class="form__title">❤️ Ravi de <span class="mark">te revoir !</span></span>
       <span class="form__subtitle">Se connecter en tant que <u>professeur ou étudiant</u> sur Objectif Lune</span>
-      <span class="form__arrow">▾</span>
+      <span class="form__arrow">↓</span>
     </div>
     <div class="form__field">
       <%= f.label "Courriel", :class => "form__label" %>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="form__links">
-      <%= f.submit "Je m'inscris", :class => "form__submit" %>
+      <%= f.submit "Je me connecte", :class => "form__submit" %>
       <div class="form__sublinks">
         <%= render "devise/shared/links" %>
         <%= link_to "J'ai besoin d'aide", new_contact_path, :class => "form__submit--help" %>

@@ -79,7 +79,8 @@
     .form__sublinks {
       display: flex;
       justify-content: center;
-
+      border-top: 1px gray solid;
+      margin-top: 1rem;
       .form__submit--outline {
         @extend .form__submit;
         font-size: 0.8rem;
