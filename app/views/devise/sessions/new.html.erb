@@ -1,26 +1,23 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="form__container">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form"}) do |f| %>
+    <div class="form__titles">
+      <span class="form__title">Ravi de te revoir !</span>
+      <span class="form__subtitle">Se connecter en tant que <u>professeur ou étudiant</u> sur Objectif Lune 🚀</span>
+      <span class="form__arrow">▾</span>
     </div>
+    <div class="form__field">
+      <%= f.label "Courriel", :class => "form__label" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form__input" %>
+    </div>
+
+    <div class="form__field">
+      <%= f.label "Mot de passe", :class => "form__label" %>
+      <%= f.password_field :password, autocomplete: "current-password", :class => "form__input" %>
+    </div>
+
+      <div class="form__links">
+        <%= f.submit "Je me connecte", :class => "form__submit" %>
+        <%= render "devise/shared/links" %>
+      </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

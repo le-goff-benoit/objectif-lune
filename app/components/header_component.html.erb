@@ -1,8 +1,10 @@
 <div class="header">
-  <div class="header__logo">
-    Hello <%= @user.email %>
-  </div>
-  <div class="header__buttons">
-    <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+  <div class="header__container">
+    <div class="header__logo">
+      👋🏻 <%= @user.name %> !
+    </div>
+    <div class="header__buttons">
+      <%= button_to 'Log out', destroy_user_session_path, method: :delete, :class => "header__sign" %>
+    </div>
   </div>
 </div>
