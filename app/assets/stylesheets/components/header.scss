@@ -16,13 +16,12 @@
     height: 100%;
 
     .header__logo {
-      font-size: 1.5rem;
-
+      font-size: 2rem;
     }
     .header__buttons {
       display: flex;
       justify-content:space-around;
-
+      border-left: 1px solid black;
       .header__sign {
        @extend .button
       }
@@ -40,8 +39,10 @@
         font-weight: 800;
         font-size: 1.2rem;
         &:hover {
-          color: red;
-        }
+          text-decoration: underline;
+          text-decoration-color: #ffe000;
+          text-decoration-thickness: 0.3rem;
+          cursor: pointer;        }
       }
     }
   }

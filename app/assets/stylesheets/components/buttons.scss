@@ -4,12 +4,13 @@
     font-size: inherit;
     font-weight: 700;
     background-color: black;
-    border-radius: $border-radius-normal;
+    border-radius: $border-radius-button;
     color: white;
     padding: 0.5rem 1rem;
 
     &:hover {
-      background-color: grey;
+      background-color: #ffe000;
+      color: black;
       cursor: pointer;
     }
 }
@@ -19,14 +20,14 @@
   text-align: center;
   font-size: inherit;
   font-weight: 700;
-  background-color: white;
-  border: 0px solid black;
-  border-radius: $border-radius-normal;
+  border-radius: $border-radius-button;
   color: black;
   padding: 0.5rem 1rem;
 
   &:hover {
-    color: red;
+    text-decoration: underline;
+    text-decoration-color: #ffe000;
+    text-decoration-thickness: 0.3rem;
     cursor: pointer;
   }
 }

@@ -10,7 +10,6 @@
   width: 77vw;
   flex-direction: column;
   section {
-    border-bottom: 1px solid black;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     display: flex;
@@ -23,13 +22,21 @@
         font-weight: 800;
         font-size: 1rem;
       }
-
       .section__subtitle {
         font-weight: 300;
         color: gray;
         font-size: 0.8rem;
       }
     }
-
+    .section__elements {
+      padding-left: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: start;
+      .elements__title {
+        font-weight: 600;
+        margin-right: 0.5rem;
+      }
+    }
   }
 }

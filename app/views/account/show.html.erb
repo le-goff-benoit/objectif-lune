@@ -5,14 +5,29 @@
       <h2 class="section__title">Général</h2>
       <h3 class="section__subtitle">Informations principales à propos de ton compte Objectif Lune</h3>
     </div>
-    <%= @user.name %>
-    <%= @user.email %>
+    <div class="section__elements">
+      <div class="elements__title">
+        Nom
+      </div>
+      <div class="elements__value">
+        <%= @user.name %>
+      </div>
+    </div>
+    <div class="section__elements">
+      <div class="elements__title">
+        Email
+      </div>
+      <div class="elements__value">
+        <%= @user.email %>
+      </div>
+    </div>
   </section>
   <section>
     <div class="section__titles">
       <h2 class="section__title">Cours</h2>
       <h3 class="section__subtitle">Inscriptions actuels aux formations suivantes</h3>
     </div>
-    <%= @user.email %>
-  </section>
+    <div class="section__element">
+      <%= @user.email %>
+    </div>  </section>
 </div>

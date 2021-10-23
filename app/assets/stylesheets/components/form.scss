@@ -62,13 +62,12 @@
     flex-direction: column;
     width: 100%;
     .form__submit {
-     @extend .button;
+      @extend .button;
+      margin-bottom: 1rem;
     }
     .form__sublinks {
       display: flex;
       justify-content: center;
-      border-top: 1px gray solid;
-      margin-top: 1rem;
       .form__submit--outline {
         @extend .form__submit;
         font-size: 0.8rem;

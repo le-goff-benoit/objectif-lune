@@ -30,9 +30,10 @@
 
   <div class="form__links">
     <%= f.submit "Je m'inscris", :class => "form__submit" %>
+    <hr class="sketch-rule">
     <div class="form__sublinks">
       <%= render "devise/shared/links" %>
-      <%= link_to "J'ai besoin d'aide", new_contact_path, :class => "form__submit--help" %>
+      <%= link_to "J'ai besoin d'aide", new_contact_path, :class => "form__submit--outline" %>
     </div>
   </div>
   <% end %>

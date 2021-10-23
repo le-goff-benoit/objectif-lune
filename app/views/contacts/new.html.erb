@@ -23,9 +23,10 @@
 
     <div class="form__links">
       <%= f.submit "Envoyer mon message", :class => "form__submit" %>
+      <hr class="sketch-rule">
       <div class="form__sublinks">
         <%= link_to "Je me connecte", new_user_session_path, :class => "form__submit--outline" %>
-        <%= link_to "Je m'inscris", new_user_registration_path, :class => "form__submit--help" %>
+        <%= link_to "Je m'inscris", new_user_registration_path, :class => "form__submit--outline" %>
       </div>
     </div>
   <% end %>
