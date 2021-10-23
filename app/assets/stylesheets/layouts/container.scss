@@ -1,13 +1,13 @@
 .container {
   display: flex;
-  border-radius: $border-radius-normal;
+  border-radius: $border-radius-small;
   margin: 30px auto;
   padding-top: calc(#{$padding-normal}/2);
   padding-left: $padding-normal;
   padding-right: $padding-normal;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   background-color: white;
-  width: 77vw;
+  width: 76vw;
   flex-direction: column;
   section {
     margin-bottom: 1rem;
@@ -20,12 +20,12 @@
       margin-bottom: 1rem;
       .section__title {
         font-weight: 800;
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       .section__subtitle {
         font-weight: 300;
         color: gray;
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
     }
     .section__elements {

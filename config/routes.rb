@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   post 'dashboard/search'
   resources :contacts
+  resources :courses
   devise_for :users
   authenticated :user do
-    root to: "dashboard#index", as: :authenticated_root
+    root to: "courses#index", as: :authenticated_root
   end
 
   devise_scope :user do
