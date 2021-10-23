@@ -1,7 +1,7 @@
 <div class="header">
   <div class="header__container">
-    <div class="header__logo">
-      <span class="mark"><%= @user.name %></span>
+    <div class="header__logo mark">
+      🚀
     </div>
     <div class="header__links">
       <%= link_to "Cours", '#', :class => "header__link" %>
@@ -10,7 +10,7 @@
       <%= link_to "Forum", '#', :class => "header__link" %>
     </div>
     <div class="header__buttons">
-      <%= button_to 'Mon compte', '#', :class => "header__config" %>
+      <%= button_to 'Mon compte', account_show_path, method: :get, :class => "header__config" %>
       <%= button_to 'Déconnexion', destroy_user_session_path, method: :delete, :class => "header__sign" %>
     </div>
   </div>

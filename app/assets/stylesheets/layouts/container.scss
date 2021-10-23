@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  border-radius: $border-radius-normal;
+  margin: 30px auto;
+  padding-top: calc(#{$padding-normal}/2);
+  padding-left: $padding-normal;
+  padding-right: $padding-normal;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: white;
+  width: 77vw;
+  flex-direction: column;
+  section {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    .section__titles {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      .section__title {
+        font-weight: 800;
+        font-size: 1rem;
+      }
+
+      .section__subtitle {
+        font-weight: 300;
+        color: gray;
+        font-size: 0.8rem;
+      }
+    }
+
+  }
+}

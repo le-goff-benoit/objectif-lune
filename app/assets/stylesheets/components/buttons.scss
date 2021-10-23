@@ -20,13 +20,13 @@
   font-size: inherit;
   font-weight: 700;
   background-color: white;
-  border: 2px solid black;
+  border: 0px solid black;
   border-radius: $border-radius-normal;
   color: black;
   padding: 0.5rem 1rem;
 
   &:hover {
-    background-color: grey;
+    color: red;
     cursor: pointer;
   }
 }

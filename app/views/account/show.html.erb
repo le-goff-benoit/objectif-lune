@@ -1,0 +1,18 @@
+<div class="container">
+  <%= render(ActionbarComponent.new(title: "Mon compte")) %>
+  <section>
+    <div class="section__titles">
+      <h2 class="section__title">Général</h2>
+      <h3 class="section__subtitle">Informations principales à propos de ton compte Objectif Lune</h3>
+    </div>
+    <%= @user.name %>
+    <%= @user.email %>
+  </section>
+  <section>
+    <div class="section__titles">
+      <h2 class="section__title">Cours</h2>
+      <h3 class="section__subtitle">Inscriptions actuels aux formations suivantes</h3>
+    </div>
+    <%= @user.email %>
+  </section>
+</div>

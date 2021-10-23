@@ -1,0 +1,8 @@
+<div class="actionbar">
+  <div class="actionbar__title">
+    <%= @title %>
+  </div>
+  <%= form_with(url: dashboard_search_path, :class => "action__searchbox") do |form| %>
+    <%= form.text_field :query, :class => "searchbox__input", data: { action: "input->form-submission#search" } %>
+<% end %>
+</div>

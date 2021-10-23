@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  get 'account/show'
   get 'dashboard/index'
+  post 'dashboard/search'
   resources :contacts
   devise_for :users
   authenticated :user do
