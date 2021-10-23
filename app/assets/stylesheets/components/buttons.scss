@@ -1,0 +1,32 @@
+.button {
+    flex-grow: 1;
+    text-align: center;
+    font-size: inherit;
+    font-weight: 700;
+    background-color: black;
+    border-radius: $border-radius-normal;
+    color: white;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background-color: grey;
+      cursor: pointer;
+    }
+}
+
+.button--outline {
+  flex-grow: 1;
+  text-align: center;
+  font-size: inherit;
+  font-weight: 700;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: $border-radius-normal;
+  color: black;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: grey;
+    cursor: pointer;
+  }
+}

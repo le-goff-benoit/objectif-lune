@@ -62,19 +62,7 @@
     flex-direction: column;
     width: 100%;
     .form__submit {
-      flex-grow: 1;
-      text-align: center;
-      font-size: inherit;
-      font-weight: 700;
-      background-color: black;
-      border-radius: $border-radius-normal;
-      color: white;
-      padding: 0.5rem 1rem;
-
-      &:hover {
-        background-color: grey;
-        cursor: pointer;
-      }
+     @extend .button;
     }
     .form__sublinks {
       display: flex;

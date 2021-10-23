@@ -1,8 +1,10 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .form__container {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     border-radius: 0;
+    box-shadow: none;
   }
 }
 
@@ -11,6 +13,7 @@
   .form__container {
     width: 100%;
     border-radius: 0;
+    box-shadow: none;
   }
 }
 
@@ -19,13 +22,15 @@
   .form__container {
     width: 100%;
     border-radius: 0;
+    box-shadow: none;
+
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .form__container {
-    width: 30vw;
+    width: 40vw;
     border-radius: $border-radius-normal;
   }
 }
