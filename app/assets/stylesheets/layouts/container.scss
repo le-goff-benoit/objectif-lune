@@ -40,3 +40,12 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .container {
+    border-radius: 0;
+    margin: 30px auto;
+    padding: 0.5rem;
+    width: auto;
+  }
+}

@@ -38,3 +38,18 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .actionbar {
+    flex-direction: column;
+  }
+
+  .actionbar__title {
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+  }
+
+  .actionbar__buttons {
+    flex-direction: row;
+  }
+}
