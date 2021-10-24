@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'dashboard/search'
   resources :contacts
   resources :courses
+  resources :groups
   devise_for :users
   authenticated :user do
     root to: "courses#index", as: :authenticated_root

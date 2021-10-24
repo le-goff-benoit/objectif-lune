@@ -7,6 +7,14 @@
     </div>
     <div class="section__elements">
       <div class="elements__title">
+        Type
+      </div>
+      <div class="elements__value">
+        <%= @user.user_type %>
+      </div>
+    </div>
+    <div class="section__elements">
+      <div class="elements__title">
         Nom
       </div>
       <div class="elements__value">
@@ -29,5 +37,15 @@
     </div>
     <div class="section__element">
       <%= @user.email %>
-    </div>  </section>
+    </div>
+  </section>
+  <section>
+    <div class="section__titles">
+      <h2 class="section__title">Groupes</h2>
+      <h3 class="section__subtitle">Inscriptions actuels aux groupes suivants</h3>
+    </div>
+    <div class="section__element">
+      <%= @user.email %>
+    </div>
+  </section>
 </div>

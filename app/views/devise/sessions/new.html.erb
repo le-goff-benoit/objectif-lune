@@ -16,7 +16,7 @@
     </div>
 
     <div class="form__links">
-      <%= f.submit "Je me connecte", :class => "form__submit" %>
+      <%= f.submit "Je me connecte", :class => "form__submit", data: { turbo: "false" } %>
       <hr class="sketch-rule">
       <div class="form__sublinks">
         <%= render "devise/shared/links" %>

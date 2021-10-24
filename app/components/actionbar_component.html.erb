@@ -1,11 +1,17 @@
 <div class="actionbar">
   <div class="actionbar__title">
+    <span class="mark">
     <%= @title %>
+    </span>
   </div>
   <!-- A implémenter plus tard avec un controlleur stimulus
   <%= form_with(url: dashboard_search_path, :class => "action__searchbox") do |form| %>
     <%= form.text_field :query, :class => "searchbox__input", data: { action: "input->form-submission#search" } %>
-<% end %>
+  <% end %>
     -->
+  <div class="actionbar__buttons">
+    <%= button_to 'Rejoindre', destroy_user_session_path, method: :delete, :class => "actionbar__button--outline" %>
+    <%= button_to 'Créer', new_group_path, method: :get, :class => "actionbar__button" %>
+  </div>
 </div>
 <hr class="sketch-rule">
