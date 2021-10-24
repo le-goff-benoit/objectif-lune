@@ -30,4 +30,12 @@ class User < ApplicationRecord
   def sanitize_email_domain(email)
     return split_domain_with_dot_x = email.split('@').last
   end
+
+  def friendly_user_type
+    if self.user_type = 'teacher'
+      return 'Compte professeur'
+    else
+      return 'Compte étudiant'
+    end
+  end
 end
