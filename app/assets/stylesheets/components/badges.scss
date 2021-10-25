@@ -1,0 +1,20 @@
+.badge {
+  display: inline-block;
+  min-width: 1rem; /* em unit */
+  padding: .2rem; /* em unit */
+  border-radius: $border-radius-button;
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.badge--private {
+  @extend .badge;
+  background-color: #ff4141;
+  color: #fefefe;
+}
+
+.badge--public {
+  @extend .badge;
+  background-color: #a4ff55;
+  color: black;
+}

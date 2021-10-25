@@ -1,3 +1,19 @@
 <div class="container">
-  <%= render(ActionbarComponent.new(title: @group.title)) %>
+  <%= render(ActionbarComponent.new(title: @group.title, subtitle: @group.description)) %>
+  <section>
+    <div class="section__titles">
+      <h2 class="section__title">Membres</h2>
+      <h3 class="section__subtitle">Membres actuels du groupe</h3>
+    </div>
+    <% @group.users.each do |member| %>
+      <div class="section__elements">
+        <div class="elements__title">
+          <%= member.name %>
+        </div>
+        <div class="elements__value">
+          <%= member.email %>
+        </div>
+      </div>
+    <% end %>
+  </section>
 </div>

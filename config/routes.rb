@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post 'dashboard/search'
   resources :contacts
   resources :courses
+  get 'groups/join'
+  post 'groups/add'
   resources :groups
   devise_for :users
   authenticated :user do

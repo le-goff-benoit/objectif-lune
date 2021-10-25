@@ -16,9 +16,15 @@
 
   .actionbar__title {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     font-size: 1.2rem;
+    flex-direction: column;
+  }
+
+  .actionbar__subtitle {
+    font-size: 1rem;
+    color: black;
   }
 
   .action__searchbox {

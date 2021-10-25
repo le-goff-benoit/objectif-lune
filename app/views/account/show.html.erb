@@ -35,8 +35,12 @@
       <h2 class="section__title">Cours</h2>
       <h3 class="section__subtitle">Inscriptions actuels aux formations suivantes</h3>
     </div>
-    <div class="section__element">
-      <%= @user.email %>
+    <div class="section__elements">
+      <div class="elements__title">
+        Aucune inscription actuellement...
+      </div>
+      <div class="elements__value">
+      </div>
     </div>
   </section>
   <section>
@@ -45,14 +49,16 @@
       <h3 class="section__subtitle">Inscriptions actuels aux groupes suivants</h3>
     </div>
     <% @groups.each do |group| %>
-      <div class="section__elements">
-        <div class="elements__title">
-          <%= group.title %>
+      <%= link_to group_path(group) do %>
+        <div class="section__elements">
+          <div class="elements__title">
+            <%= group.title %>
+          </div>
+          <div class="elements__value">
+            <%= group.description %>
+          </div>
         </div>
-        <div class="elements__value">
-          <%= group.description %>
-        </div>
-      </div>
+        <% end  %>
     <% end %>
   </section>
 </div>

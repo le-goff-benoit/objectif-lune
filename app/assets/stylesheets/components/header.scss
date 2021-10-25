@@ -21,7 +21,7 @@
     .header__buttons {
       display: flex;
       justify-content:space-around;
-      border-left: 1px solid black;
+      border-left: 4px solid black;
       .header__sign {
        @extend .button
       }

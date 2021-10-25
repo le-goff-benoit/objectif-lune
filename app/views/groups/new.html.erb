@@ -19,6 +19,11 @@
           <%= f.text_area :description, :class => "form__input", :size => "30x5", required: true %>
         </div>
 
+        <div class="form__field">
+          <%= f.label "Clé d'inscription", :class => "form__label" %>
+          <%= f.text_field :key, :class => "form__input" %>
+        </div>
+
         <div class="form__links">
           <%= f.submit "Créer mon groupe", :class => "form__submit", data: { turbo: "false" } %>
         </div>
