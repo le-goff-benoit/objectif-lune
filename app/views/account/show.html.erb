@@ -44,8 +44,15 @@
       <h2 class="section__title">Groupes</h2>
       <h3 class="section__subtitle">Inscriptions actuels aux groupes suivants</h3>
     </div>
-    <div class="section__element">
-      <%= @user.email %>
-    </div>
+    <% @groups.each do |group| %>
+      <div class="section__elements">
+        <div class="elements__title">
+          <%= group.title %>
+        </div>
+        <div class="elements__value">
+          <%= group.description %>
+        </div>
+      </div>
+    <% end %>
   </section>
 </div>

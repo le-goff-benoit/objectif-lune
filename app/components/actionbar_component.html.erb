@@ -12,7 +12,7 @@
   <% if @domain.present? %>
     <div class="actionbar__buttons">
       <%= button_to 'Rejoindre', destroy_user_session_path, method: :delete, :class => "actionbar__button--outline" %>
-      <%= button_to 'Créer', new_group_path, method: :get, :class => "actionbar__button" %>
+      <%= button_to 'Créer', new_group_path, method: :get, :class => "actionbar__button", data: {turbo_frame: "modal"} %>
     </div>
   <% end %>
 </div>

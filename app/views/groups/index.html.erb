@@ -5,5 +5,17 @@
       <h2 class="section__title">Actifs</h2>
       <h3 class="section__subtitle">Groupes actuellement actifs auxquels tu es enregistrés</h3>
     </div>
+    <% @groups.each do |group| %>
+      <%= link_to group_path(group) do %>
+        <div class="section__elements">
+          <div class="elements__title">
+            <%= group.title %>
+          </div>
+          <div class="elements__value">
+            <%= group.description %>
+          </div>
+        </div>
+      <% end  %>
+    <% end %>
   </section>
 </div>
