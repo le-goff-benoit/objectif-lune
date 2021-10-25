@@ -1,5 +1,5 @@
 <div class="actionbar">
-  <div class="actionbar__title">
+  <div class="actionbar__titles">
     <div class="mark">
     <%= @title %>
     </div>
@@ -12,11 +12,17 @@
     <%= form.text_field :query, :class => "searchbox__input", data: { action: "input->form-submission#search" } %>
   <% end %>
     -->
+  <div class="actionbar__buttons">
   <% if @domain.present? %>
-    <div class="actionbar__buttons">
       <%= button_to "Rejoindre par clé d'accès", groups_join_path, method: :get, :class => "actionbar__button--outline", data: {turbo_frame: "modal"} %>
       <%= button_to 'Créer', new_group_path, method: :get, :class => "actionbar__button", data: {turbo_frame: "modal"} %>
-    </div>
   <% end %>
+  <% if @invitation.present? %>
+      <%= button_to "Inviter", call_user_path(@object.id), method: :get, :class => "actionbar__button--outline", data: {turbo_frame: "modal"} %>
+  <% end %>
+  <% unless @backpath.nil? %>
+      <%= button_to 'Retour', @backpath, method: :get, :class => "actionbar__button" %>
+  <% end %>
+    </div>
 </div>
 <hr class="sketch-rule">

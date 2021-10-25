@@ -9,6 +9,15 @@
   background-color: white;
   width: 76vw;
   flex-direction: column;
+  .container__supertitle {
+    font-weight: 800;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
   section {
     margin-bottom: 1rem;
     padding-bottom: 1rem;

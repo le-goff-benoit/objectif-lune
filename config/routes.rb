@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :courses
   get 'groups/join'
   post 'groups/add'
+  match "/groups/call/:id" => "groups#call", :via => [:get, :post], :as => 'call_user'
+  post 'groups/invit'
   resources :groups
   devise_for :users
   authenticated :user do

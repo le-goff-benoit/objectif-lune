@@ -14,17 +14,19 @@
     background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 119 6'%3E%3Cpath d='M119 3.8c-60 2.5-33.5-7-119 0' fill='none' stroke='%231d2d35' stroke-width='2'/%3E%3C/svg%3E") center/5em 100% repeat-x
   }
 
-  .actionbar__title {
+  .actionbar__titles {
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: start;
     font-size: 1.2rem;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .actionbar__subtitle {
     font-size: 1rem;
     color: black;
+    margin-left: 1rem;
+    font-weight: 200;
   }
 
   .action__searchbox {

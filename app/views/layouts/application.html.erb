@@ -10,13 +10,15 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-  <%= render(HeaderComponent.new(user: current_user)) %>
-  <% end %>
+    <% if notice %>
+      <p class="devise__notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="devise__notice"><%= alert %></p>
+    <% end %>
+    <%= render(HeaderComponent.new(user: current_user, is_signed_in: user_signed_in?)) %>
     <%= yield %>
-  <%= turbo_frame_tag "modal" %>
-  <div class="body__message-bottom">
-    Fait avec ❤️ par Le Goff Benoît
-  </div>
+    <%= turbo_frame_tag "modal" %>
+    <% render(BottomMessageComponent.new) %>
   </body>
 </html>
