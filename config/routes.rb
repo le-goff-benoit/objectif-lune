@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'account/show'
+  match 'account/quit/group/:id' => 'account#quit', :via => :delete, :as => 'quit_group'
   get 'dashboard/index'
   post 'dashboard/search'
   resources :contacts

@@ -13,14 +13,16 @@
   <% end %>
     -->
   <div class="actionbar__buttons">
-  <% if @domain.present? %>
-      <%= button_to "Rejoindre par clé d'accès", groups_join_path, method: :get, :class => "actionbar__button--outline", data: {turbo_frame: "modal"} %>
+  <% if @join.present? %>
+      <%= button_to "Rejoindre", groups_join_path, method: :get, :class => "actionbar__button--outline", data: {turbo_frame: "modal"} %>
+    <% end %>
+  <% if @create.present? %>
       <%= button_to 'Créer', new_group_path, method: :get, :class => "actionbar__button", data: {turbo_frame: "modal"} %>
   <% end %>
   <% if @invitation.present? %>
       <%= button_to "Inviter", call_user_path(@object.id), method: :get, :class => "actionbar__button--outline", data: {turbo_frame: "modal"} %>
   <% end %>
-  <% unless @backpath.nil? %>
+  <% if @backpath.present? %>
       <%= button_to 'Retour', @backpath, method: :get, :class => "actionbar__button" %>
   <% end %>
     </div>

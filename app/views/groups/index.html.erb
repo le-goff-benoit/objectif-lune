@@ -1,39 +1,13 @@
 <div class="container">
-  <%= render(ActionbarComponent.new(title: "Mes groupes", domain: "Group")) %>
+  <%= render(ActionbarComponent.new(title: "Mes groupes", domain: "Group", join: true, create: true)) %>
   <section>
     <div class="section__titles">
       <h2 class="section__title">Actifs</h2>
       <h3 class="section__subtitle">Groupes actuellement actifs auxquels tu es enregistrés</h3>
     </div>
-    <% @my_groups.each do |group| %>
-      <%= link_to group_path(group) do %>
-        <div class="section__elements">
-          <div class="elements__title">
-            <%= group.title %>
-          </div>
-          <div class="elements__value">
-            <%= group.description %> <%= render(BadgeComponent.new(object: group, status: group.privacy)) %>
-          </div>
-        </div>
-      <% end  %>
-    <% end %>
-  </section>
-  <section>
-    <div class="section__titles">
-      <h2 class="section__title">Libres</h2>
-      <h3 class="section__subtitle">Groupes actuellement libres d'inscription</h3>
-    </div>
-    <% @free_groups.each do |group| %>
-      <%= link_to group_path(group) do %>
-        <div class="section__elements">
-          <div class="elements__title">
-            <%= group.title %>
-          </div>
-          <div class="elements__value">
-            <%= group.description %> <%= render(BadgeComponent.new(object: group, status: group.privacy)) %>
-          </div>
-        </div>
-      <% end  %>
+    <%= turbo_stream_from "groups" %>
+    <%= turbo_frame_tag "groups" do %>
+      <%= render partial: "groups/group", collection: @groups%>
     <% end %>
   </section>
 </div>

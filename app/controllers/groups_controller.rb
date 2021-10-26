@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @my_groups = current_user.groups
-    @free_groups = Group.get_free_groups(current_user)
+    @groups = current_user.groups
   end
   def show
     @group = Group.find(params[:id])
@@ -12,22 +11,27 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(params.require(:group).permit(:title, :description, :key, :goal))
     @group.users << current_user
-    if @group.save!
+    if @group.save
       redirect_to groups_path, notice: "Création réussie."
+    else
+      render 'new', status: :unprocessable_entity
     end
   end
 
   # Join a group
   def join
+    @group = Group.new
   end
 
   def add
-    @group = Group.find_by(key: params[:key])
+    @group = Group.find_by(key: params[:group][:key])
     if @group.present? && !current_user.in?(@group.users)
       @group.users << current_user
       redirect_to group_path(@group), notice: "Inscription au groupe réussie"
     else
-      redirect_to groups_path, notice: "Aucun résultat"
+      @group = @group
+      @group.errors.add(:key, "Inscription impossible avec la clé fournie")
+      render 'join', status: :unprocessable_entity
     end
   end
 
@@ -43,7 +47,9 @@ class GroupsController < ApplicationController
       @group.users << @user
       redirect_to group_path(@group), notice: "Membre inscrit"
     else
-      redirect_to group_path(@group), notice: "Membre introuvable ou déjà inscrit"
+      @group = @group
+      @group.errors.add(:key, "Membre introuvable ou déjà inscrit")
+      render 'call', status: :unprocessable_entity
     end
   end
 end

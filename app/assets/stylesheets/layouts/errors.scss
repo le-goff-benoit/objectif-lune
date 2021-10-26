@@ -1,0 +1,12 @@
+.errors__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.error {
+  @extend .mark--danger;
+  text-align: center;
+  font-size: 0.8rem;
+}
