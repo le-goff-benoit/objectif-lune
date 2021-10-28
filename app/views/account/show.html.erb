@@ -49,17 +49,18 @@
       <h3 class="section__subtitle">Inscriptions actuels aux groupes suivants</h3>
     </div>
     <% @groups.each do |group| %>
-      <%= link_to group_path(group) do %>
         <div class="section__elements">
-          <div class="elements__title">
-            <%= group.title %>
+          <%= button_to '❌', quit_group_path(group), :method => :delete %>
+            <div class="elements__title">
+              <%= link_to group_path(group) do %>
+                <%= group.title %>
+              <% end  %>
           </div>
-          <div class="elements__value">
-            <%= group.description %>
-          </div>
+            <div class="elements__value">
+             <%= group.goal %>
+            </div>
         </div>
-        <% end  %>
-      <%= button_to 'Quitter', quit_group_path(group), :method => :delete %>
+
   <% end %>
   </section>
 </div>

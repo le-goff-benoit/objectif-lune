@@ -9,9 +9,25 @@
       <%= link_to "Examens", '#', :class => "header__link" %>
       <%= link_to "Forum", '#', :class => "header__link" %>
     </div>
-    <div class="header__buttons">
-      <%= button_to 'Mon compte', account_show_path, method: :get, :class => "header__config" %>
-      <%= button_to 'Déconnexion', destroy_user_session_path, method: :delete, :class => "header__sign" %>
+    <div class="header__buttons" data-controller="account">
+        <button data-action="click->account#toggle" class="header__sign" style="display: flex">
+          <div>
+            <%= @user.name %>
+          </div>
+          <div data-account-target="arrow">
+            ⬇
+          </div>
+        </button>
+        <div data-account-target="details" class="header__details" style="display: none">
+          <%= button_to 'Mon compte', account_show_path, method: :get, :class => "header__config" %>
+          <%= button_to notifications_index_path, method: :get, :class => "header__config" do %>
+            <% if Notification.unseen_notifications(@user).count != 0 %>
+              ⚠️
+            <% end %>
+            <%= Notification.unseen_notifications(@user).count %> notifications
+          <% end %>
+          <%= button_to 'Déconnexion', destroy_user_session_path, method: :delete, :class => "header__config" %>
+        </div>
     </div>
   </div>
 </div>

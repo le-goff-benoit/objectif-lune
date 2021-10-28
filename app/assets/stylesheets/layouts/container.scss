@@ -45,9 +45,20 @@
       margin-bottom: 0.5rem;
       display: flex;
       justify-content: start;
+      align-items: center;
       .elements__title {
         font-weight: 600;
         margin-right: 0.5rem;
+      }
+      .elements__action {
+        margin-right: 0.5rem;
+      }
+
+      .elements__minor-info {
+        margin-left: 0.1rem;
+        font-style: italic;
+        color: gray;
+        font-size: 0.7rem;
       }
     }
   }

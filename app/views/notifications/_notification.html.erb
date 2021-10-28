@@ -1,0 +1,15 @@
+<div class="section__elements">
+  <div class="elements__action">
+    <% if !notification.view_state %>
+      <%= button_to "✅", seen_notification_path(notification), :method => :post %>
+    <% end %>
+  </div>
+  <div class="elements__title">
+    <%= link_to polymorphic_url(notification.linkable_type.tableize.singularize, :id => notification.linkable_id) do %>
+      <%= notification.content %>
+    <% end %>
+  </div>
+  <div class="elements__minor-info">
+    Il y a <%= time_ago_in_words(notification.created_at) %>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   before_save :set_user_type
+  has_many :notifications
 
   has_and_belongs_to_many :courses
   has_and_belongs_to_many :groups

@@ -1,0 +1,17 @@
+<div class="container">
+  <%= render(ActionbarComponent.new(title: "Mes notifications")) %>
+  <section>
+    <div class="section__titles">
+      <h2 class="section__title">A traiter</h2>
+      <h3 class="section__subtitle">Groupes actuellement actifs auxquels tu es enregistrés</h3>
+    </div>
+    <%= render @unseen_notifications %>
+  </section>
+  <section>
+    <div class="section__titles">
+      <h2 class="section__title">Terminée</h2>
+      <h3 class="section__subtitle">Groupes actuellement actifs auxquels tu es enregistrés</h3>
+    </div>
+    <%= render @notifications %>
+  </section>
+</div>
