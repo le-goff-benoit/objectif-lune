@@ -10,15 +10,17 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p class="devise__notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="devise__notice"><%= alert %></p>
-    <% end %>
-    <%= render(HeaderComponent.new(user: current_user, is_signed_in: user_signed_in?)) %>
-    <%= yield %>
-    <%= turbo_frame_tag "modal" %>
-    <% render(BottomMessageComponent.new) %>
+    <div class="body__container">
+      <% if notice %>
+        <p class="devise__notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="devise__notice"><%= alert %></p>
+      <% end %>
+      <%= render(HeaderComponent.new(user: current_user, is_signed_in: user_signed_in?)) %>
+      <%= yield %>
+      <%= turbo_frame_tag "modal" %>
+      <% render(BottomMessageComponent.new) %>
+    </div>
   </body>
 </html>

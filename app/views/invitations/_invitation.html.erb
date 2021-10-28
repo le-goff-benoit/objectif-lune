@@ -1,0 +1,9 @@
+<div class="section__elements">
+  <div class="elements__title">
+      <%= invitation.content %>
+  </div>
+  <div class="elements__action">
+    <%= button_to "Accepter", accept_invitation_path(invitation), :method => :post, :class => "pills__accept" %>
+    <%= button_to "Refuser", refuse_invitation_path(invitation), :method => :post, :class => "pills__refuse" %>
+  </div>
+</div>

@@ -50,17 +50,15 @@
     </div>
     <% @groups.each do |group| %>
         <div class="section__elements">
-          <%= button_to '❌', quit_group_path(group), :method => :delete %>
-            <div class="elements__title">
+          <div class="elements__title">
               <%= link_to group_path(group) do %>
                 <%= group.title %>
               <% end  %>
           </div>
-            <div class="elements__value">
-             <%= group.goal %>
-            </div>
+          <div class="elements__action">
+            <%= button_to "Quitter", quit_group_path(group), :method => :delete, :class => "pills__refuse" %>
+          </div>
         </div>
-
   <% end %>
   </section>
 </div>

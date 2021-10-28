@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   # Notifications
   get 'notifications/index'
   match 'notifications/:id' => 'notifications#seen', :via => :post, :as => 'seen_notification'
+
+  # Invitations
+  match 'invitations/accept/:id' => 'invitations#accept', :via => :post, :as => 'accept_invitation'
+  match 'invitations/refuse/:id' => 'invitations#refuse', :via => :post, :as => 'refuse_invitation'
+
   # Courses
   resources :courses
 

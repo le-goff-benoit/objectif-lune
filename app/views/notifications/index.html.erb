@@ -2,6 +2,13 @@
   <%= render(ActionbarComponent.new(title: "Mes notifications")) %>
   <section>
     <div class="section__titles">
+      <h2 class="section__title">Invitations</h2>
+      <h3 class="section__subtitle">Invitations reçues que tu dois refuser ou accepter</h3>
+    </div>
+    <%= render @invitations %>
+  </section>
+  <section>
+    <div class="section__titles">
       <h2 class="section__title">A traiter</h2>
       <h3 class="section__subtitle">Notifications reçues que tu dois consulter</h3>
     </div>

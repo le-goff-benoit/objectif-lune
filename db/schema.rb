@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_113528) do
+ActiveRecord::Schema.define(version: 2021_10_28_183558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 2021_10_28_113528) do
     t.index ["group_id", "user_id"], name: "index_groups_users_on_group_id_and_user_id"
   end
 
+  create_table "invitations", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.string "invitable_type", null: false
+    t.bigint "invitable_id", null: false
+    t.boolean "pending", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invitable_type", "invitable_id"], name: "index_invitations_on_invitable"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.string "content"
     t.string "linkable_type", null: false
@@ -62,6 +74,16 @@ ActiveRecord::Schema.define(version: 2021_10_28_113528) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["linkable_type", "linkable_id"], name: "index_notifications_on_linkable"
     t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.boolean "state", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "group_id", null: false
+    t.index ["group_id"], name: "index_tasks_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,5 +100,7 @@ ActiveRecord::Schema.define(version: 2021_10_28_113528) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "invitations", "users"
   add_foreign_key "notifications", "users"
+  add_foreign_key "tasks", "groups"
 end

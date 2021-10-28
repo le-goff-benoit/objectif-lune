@@ -1,0 +1,34 @@
+.pills {
+  border: none;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5rem 0.3rem;
+  cursor: pointer;
+  border-radius: $border-radius-button;
+  font-size: 0.8rem;
+}
+
+.pills:hover {
+  background-color: #f1f1f1;
+}
+
+.pills__accept {
+  @extend .pills;
+  background-color: #105601;
+
+  &:hover {
+    background-color: #26b405;
+  }
+}
+
+.pills__refuse {
+  @extend .pills;
+  background-color: rgb(96, 2, 2);
+
+  &:hover {
+    background-color: #ff4141;
+  }
+}

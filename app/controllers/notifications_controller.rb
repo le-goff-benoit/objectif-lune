@@ -1,7 +1,8 @@
 class NotificationsController < ApplicationController
   def index
-    @unseen_notifications = Notification.unseen_notifications(current_user)
+    @unseen_notifications = Notification.unseen_notifications(current_user).order('created_at desc')
     @notifications = Notification.seen_notifications(current_user).limit(5).order('created_at desc')
+    @invitations = Invitation.pending_invitations(current_user).order('created_at desc')
   end
 
   def seen

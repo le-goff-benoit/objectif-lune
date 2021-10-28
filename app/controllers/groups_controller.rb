@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @members = @group.users
+    @tasks = @group.tasks
   end
   def new
     @group = Group.new
@@ -53,14 +54,13 @@ class GroupsController < ApplicationController
     @user = User.find_by(email: params[:group][:email])
     @group = Group.find(params[:group][:id])
     if @user.present? && !@user.in?(@group.users)
-      @notification = Notification.new(content: "Tu as été invité et ajouté à un groupe : " + @group.title, user: @user, linkable: @group, view_state: false )
-      @notification.save
+      @invitation = Invitation.new(content: "Tu as été invité à rejoindre le groupe : " + @group.title, user: @user, invitable: @group)
+      @invitation.save
       @group.users.each do |user|
-        @n = Notification.new(content: @user.name + " a rejoint le groupe : " + @group.title, user: user, linkable: @group, view_state: false )
+        @n = Notification.new(content: @user.name + " a été invité à rejoindre le groupe : " + @group.title, user: user, linkable: @group, view_state: false )
         @n.save
       end
-      @group.users << @user
-      redirect_to group_path(@group), notice: "Invitation réussie"
+      redirect_to group_path(@group), notice: "Invitation envoyée"
     else
       @group = @group
       @group.errors.add(:key, "Membre introuvable ou déjà inscrit")

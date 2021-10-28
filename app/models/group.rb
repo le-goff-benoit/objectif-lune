@@ -1,6 +1,7 @@
 class Group < ApplicationRecord
   has_and_belongs_to_many :users
   before_save :set_privacy
+  has_many :tasks
 
   validates :key, :uniqueness => { message: "Cette clé est déja utilisée, merci d'en choisir une autre", :case_sensitive => true}, :allow_blank => true, :presence => true
 

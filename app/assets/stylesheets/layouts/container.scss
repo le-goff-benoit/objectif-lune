@@ -1,14 +1,12 @@
 .container {
   display: flex;
   border-radius: $border-radius-small;
-  margin: 30px auto;
   padding-top: calc(#{$padding-normal}/2);
-  padding-left: $padding-normal;
-  padding-right: $padding-normal;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   background-color: white;
-  width: 76vw;
+  width: 100%;
   flex-direction: column;
+  padding: 1rem;
   .container__supertitle {
     font-weight: 800;
     justify-content: center;
@@ -51,7 +49,12 @@
         margin-right: 0.5rem;
       }
       .elements__action {
+        display: flex;
         margin-right: 0.5rem;
+
+        button {
+          margin: 0 0.2rem;
+        }
       }
 
       .elements__minor-info {

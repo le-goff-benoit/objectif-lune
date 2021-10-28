@@ -9,9 +9,23 @@
         <h2 class="section__title">Membres</h2>
         <h3 class="section__subtitle">Membres actuels du groupe</h3>
       </div>
-        <% @members.each do |member| %>
-          <%= render 'groups/member', member: member, group: @group %>
+        <% unless @members.nil? %>
+          <% @members.each do |member|  %>
+            <%= render 'groups/member', member: member, group: @group %>
+          <% end %>
         <% end %>
+    </section>
+    <section>
+      <div class="section__titles">
+        <h2 class="section__title">Tâches</h2>
+        <h3 class="section__subtitle">Tâches actuels du groupe</h3>
+      </div>
+      <%= turbo_stream_from @group, :tasks %>
+      <div id="tasks">
+          <% @tasks.each do |task| %>
+            <%= render 'tasks/task', task: task, group: @group %>
+          <% end %>
+      </div>
     </section>
   </div>
 </div>

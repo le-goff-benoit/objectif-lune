@@ -23,10 +23,10 @@
         <div data-account-target="details" class="header__details" style="display: none">
           <%= button_to 'Mon compte', account_show_path, method: :get, :class => "header__config" %>
           <%= button_to notifications_index_path, method: :get, :class => "header__config" do %>
-            <% if Notification.unseen_notifications(@user).count != 0 %>
+            <% if (Notification.unseen_notifications(@user).count + Invitation.pending_invitations(@user).count) != 0 %>
               ⚠️
             <% end %>
-            <%= Notification.unseen_notifications(@user).count %> notifications
+            <%= Notification.unseen_notifications(@user).count + Invitation.pending_invitations(@user).count %> notifications
           <% end %>
           <%= button_to 'Déconnexion', destroy_user_session_path, method: :delete, :class => "header__config" %>
         </div>
