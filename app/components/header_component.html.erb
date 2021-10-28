@@ -10,7 +10,8 @@
       <%= link_to "Forum", '#', :class => "header__link" %>
     </div>
     <div class="header__buttons" data-controller="account">
-        <button data-action="click->account#toggle" class="header__sign" style="display: flex">
+      <div>
+        <button data-action="account#toggle" class="header__sign" style="display: flex">
           <div>
             <%= @user.name %>
           </div>
@@ -18,6 +19,7 @@
             ⬇
           </div>
         </button>
+      </div>
         <div data-account-target="details" class="header__details" style="display: none">
           <%= button_to 'Mon compte', account_show_path, method: :get, :class => "header__config" %>
           <%= button_to notifications_index_path, method: :get, :class => "header__config" do %>

@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render(ActionbarComponent.new(title: @group.title, subtitle: @group.description, backpath: groups_path, invitation: true, object: @group)) %>
+  <%= render(ActionbarComponent.new(title: @group.title, subtitle: @group.description, backpath: groups_path, invitation: true, object: @group, forum: true, key: @group.key)) %>
   <div class="sections">
     <div class="container__supertitle">
       <span class="mark"><%= @group.goal %></span>

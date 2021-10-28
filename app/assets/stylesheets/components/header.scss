@@ -31,7 +31,8 @@
        @extend .button;
       }
       .header__config {
-        @extend .button--outline
+        @extend .button--outline;
+        font-size: 0.8rem;
       }
       .header__notif {
         @extend .button;

@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
       @notification = Notification.new(content: "Tu as rejoins le groupe : " + @group.title, user: current_user, linkable: @group, view_state: false )
       @notification.save
       @group.users.each do |user|
-        @n = Notification.new(content: current_user.name + " as rejoins le groupe : " + @group.title, user: user, linkable: @group, view_state: false )
+        @n = Notification.new(content: current_user.name + " a rejoint le groupe : " + @group.title, user: user, linkable: @group, view_state: false )
         @n.save
       end
       @group.users << current_user
@@ -56,7 +56,7 @@ class GroupsController < ApplicationController
       @notification = Notification.new(content: "Tu as été invité et ajouté à un groupe : " + @group.title, user: @user, linkable: @group, view_state: false )
       @notification.save
       @group.users.each do |user|
-        @n = Notification.new(content: @user.name + " as rejoins le groupe : " + @group.title, user: user, linkable: @group, view_state: false )
+        @n = Notification.new(content: @user.name + " a rejoint le groupe : " + @group.title, user: user, linkable: @group, view_state: false )
         @n.save
       end
       @group.users << @user

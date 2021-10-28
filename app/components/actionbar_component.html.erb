@@ -3,6 +3,11 @@
     <div class="mark">
     <%= @title %>
     </div>
+    <% if @key.present? %>
+      <div class="actionbar__secretkey" data-controller="action" data-action="mouseover->action#show mouseout->action#hide">
+        Clé d'accès: <span data-action-target="openkey"><%= @key %></span><span data-action-target="closekey">***********</span>
+      </div>
+    <% end %>
     <div class="actionbar__subtitle">
       <%= @subtitle %>
     </div>
@@ -22,6 +27,9 @@
   <% if @invitation.present? %>
       <%= button_to "Inviter", call_user_path(@object.id), method: :get, :class => "actionbar__button--outline", data: {turbo_frame: "modal"} %>
   <% end %>
+    <% if @forum.present? %>
+      <%= button_to "Forum", call_user_path(@object.id), method: :get, :class => "actionbar__button--outline" %>
+    <% end %>
   <% if @backpath.present? %>
       <%= button_to 'Retour', @backpath, method: :get, :class => "actionbar__button" %>
   <% end %>

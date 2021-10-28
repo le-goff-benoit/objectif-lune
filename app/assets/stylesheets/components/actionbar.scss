@@ -16,10 +16,15 @@
 
   .actionbar__titles {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: start;
     font-size: 1.2rem;
-    flex-direction: row;
+    .actionbar__secretkey {
+      font-size: 0.9rem;
+      color: #2E2F30;
+      margin-top: 0.5rem;
+    }
   }
 
   .actionbar__subtitle {

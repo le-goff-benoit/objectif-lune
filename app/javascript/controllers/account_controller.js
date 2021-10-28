@@ -4,8 +4,8 @@ export default class extends Controller {
     static targets = [ "open", "details", "arrow" ]
 
     hide() {
-        console.log("hello account"),
         this.detailsTarget.classList.remove("show");
+        console.log("hide")
     }
 
     escClose(event) {
@@ -14,5 +14,6 @@ export default class extends Controller {
 
     toggle() {
         this.detailsTarget.classList.toggle("show");
+        console.log("toggle")
     }
 }
