@@ -5,9 +5,6 @@
       <h2 class="section__title">Actifs</h2>
       <h3 class="section__subtitle">Groupes actuellement actifs auxquels tu es enregistrés</h3>
     </div>
-    <%= turbo_stream_from "groups" %>
-    <%= turbo_frame_tag "groups" do %>
-      <%= render partial: "groups/group", collection: @groups%>
-    <% end %>
+      <%= render @groups %>
   </section>
 </div>

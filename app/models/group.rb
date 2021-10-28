@@ -4,14 +4,6 @@ class Group < ApplicationRecord
 
   validates :key, :uniqueness => { message: "Cette clé est déja utilisée, merci d'en choisir une autre", :case_sensitive => true}, :allow_blank => true, :presence => true
 
-  after_create_commit -> {
-    broadcast_append_to "groups"
-  }
-
-  after_update_commit -> {
-    broadcast_replace_later_to(self, locals: { group: self })
-  }
-
   def set_privacy
     if self.key.present?
       self.privacy = true
@@ -19,6 +11,7 @@ class Group < ApplicationRecord
       self.privacy = false
     end
   end
+
   def sanitize_privacy
     if self.privacy
       return "Privé"

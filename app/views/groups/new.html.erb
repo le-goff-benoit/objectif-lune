@@ -1,4 +1,4 @@
-<turbo-frame id="modal">
+<turbo-frame id="modal", target="_top" >
   <div class="modal" data-controller="modal" data-action="keyup@document->modal#escClose">
     <button type="button" class="modal-backdrop" tabindex="-1" data-action="modal#close"></button>
     <div class="modal-window">
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form__links">
-          <%= f.submit "Créer mon groupe", :class => "form__submit", data: { turbo: "true" } %>
+          <%= f.submit "Créer mon groupe", :class => "form__submit", data: { turbo: "false" } %>
         </div>
       <% end %>
     </div>

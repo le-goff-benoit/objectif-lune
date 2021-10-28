@@ -6,6 +6,14 @@ export default class extends Controller {
         this.modalTurboFrame.src = null
     }
 
+    show(event) {
+        const { detail: { success } } = event
+        console.log(event)
+        if (success) {
+            close()
+        }
+    }
+
     escClose(event) {
         if (event.key === 'Escape') this.close()
     }

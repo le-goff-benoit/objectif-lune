@@ -1,9 +1,10 @@
 class GroupsController < ApplicationController
   def index
-    @groups = current_user.groups
+    @groups = Group.all
   end
   def show
     @group = Group.find(params[:id])
+    @members = @group.users
   end
   def new
     @group = Group.new
@@ -27,9 +28,9 @@ class GroupsController < ApplicationController
     @group = Group.find_by(key: params[:group][:key])
     if @group.present? && !current_user.in?(@group.users)
       @group.users << current_user
-      redirect_to group_path(@group), notice: "Inscription au groupe réussie"
+      redirect_to group_path(@group), notice: 'Ajout réussi'
     else
-      @group = @group
+      @group = Group.new
       @group.errors.add(:key, "Inscription impossible avec la clé fournie")
       render 'join', status: :unprocessable_entity
     end
@@ -45,7 +46,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:group][:id])
     if @user.present? && !@user.in?(@group.users)
       @group.users << @user
-      redirect_to group_path(@group), notice: "Membre inscrit"
+      redirect_to group_path(@group), notice: "Invitation réussie"
     else
       @group = @group
       @group.errors.add(:key, "Membre introuvable ou déjà inscrit")
