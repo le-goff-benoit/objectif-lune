@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :check_rights, only: [:show]
+
   def index
     @groups = current_user.groups
   end
@@ -65,6 +67,17 @@ class GroupsController < ApplicationController
       @group = @group
       @group.errors.add(:key, "Membre introuvable ou déjà inscrit")
       render 'call', status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def check_rights
+    @group = Group.find(params[:id])
+    if @group.present?
+      unless current_user.in?(@group.users)
+        redirect_to groups_path, notice: "Accès non autorisé"
+      end
     end
   end
 end
