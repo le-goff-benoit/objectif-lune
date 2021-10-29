@@ -1,0 +1,11 @@
+<%= turbo_frame_tag task %>
+<div class="section__elements">
+  <div class="elements__title" style="<%= 'text-decoration: line-through;' if task.state %>">
+    <%= task.title %>
+    <% if !task.user.nil? %>
+      <span class='pills__responsible--<%= task.group.users.find_index(task.user) %>'><%= task.user.name %></span>
+    <% else %>
+      <span class="pills__responsible">Groupe</span>
+    <% end  %>
+  </div>
+</div>
