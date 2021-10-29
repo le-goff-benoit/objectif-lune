@@ -146,6 +146,12 @@
           outline: none;
         }
       }
+      .form__area--inline {
+        @extend .form__text--inline;
+        height: 5rem;
+        width: 50ch;
+        font-size: inherit;
+      }
       .form__select--inline {
         border:none;
         -webkit-appearance: none;

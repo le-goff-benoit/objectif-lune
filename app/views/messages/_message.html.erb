@@ -1,0 +1,17 @@
+<%= turbo_frame_tag dom_id(message) %>
+<% if message.user %>
+  <div class="message__user">
+    <div>
+      <%= message.text %>  </br>
+    </div>
+    <div class="message__note">
+      <%= message.user.name %> il y a <%= time_ago_in_words(message.created_at) %></br>
+    </div>
+  </div>
+<% else %>
+  <div>
+    <div class="other__user">
+      <%= message.content %> par <%= message.user.name %> </br>
+    </div>
+  </div>
+<% end %>

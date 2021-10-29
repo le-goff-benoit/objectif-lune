@@ -1,0 +1,10 @@
+<%= form_for [@channel, @message], :html => {:class =>"form--inline"} do |f|  %>
+  <div class="form__elements">
+    <div class="form__inputs--inline">
+      <%= f.rich_text_area :text %>
+    </div>
+    <div class="form__submit--inline">
+      <%= f.submit "Envoyer" %>
+    </div>
+  </div>
+<% end %>

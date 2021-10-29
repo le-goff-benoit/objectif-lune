@@ -29,7 +29,11 @@ Rails.application.routes.draw do
   resources :groups do
     resources :tasks
     match "/groups/tasks/complete/:id" => "tasks#complete", :via => [:get], :as => 'complete_task'
+  end
 
+  # Forum
+  resources :channels do
+  resources :messages
   end
 
   # Devise

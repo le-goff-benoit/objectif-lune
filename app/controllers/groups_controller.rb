@@ -20,6 +20,8 @@ class GroupsController < ApplicationController
     @group.users << current_user
     if @group.save
       @notification.save
+      @channel = Channel.new(title: "Forum du groupe " + @group.title, group: @group)
+      @channel.save
       redirect_to groups_path, notice: "Création réussie."
     else
       render 'new', status: :unprocessable_entity

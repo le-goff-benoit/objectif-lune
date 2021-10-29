@@ -75,3 +75,45 @@
     width: auto;
   }
 }
+
+.container__messages {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  .message__user {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+    min-height: 2rem;
+    background-color: #cecece;
+    color: #eaeaea;
+    border-radius: $border-radius-small;
+    margin: .5rem 0;
+    padding: 1rem;
+    color: black;
+    margin: .5rem 0;
+    flex-direction: column;
+    .message__note {
+      font-style: italic;
+      font-size: .9rem;
+      color: #666666;
+      align-self: flex-end;
+    }
+  }
+
+  .other__user {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    min-height: 2rem;
+    background-color: rgba(55, 134, 3, 0.7);
+    color: #eaeaea;
+    border-radius: $border-radius-small;
+    margin: .5rem 0;
+    float: right;
+    padding: 1rem;
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,33 @@
+<div class="container">
+  <%= render(ActionbarComponent.new(title: @channel.title)) %>
+  <div class="sections">
+    <div class="container__supertitle">
+      <span class="mark">Forum</span>
+    </div>
+  </div>
+    <section>
+      <div class="section__titles">
+        <h2 class="section__title">Messages
+        </h2>
+        <h3 class="section__subtitle">Messages actuels du forum</h3>
+      </div>
+      <div class="section__elements">
+        <div class="elements__title" >
+          <%= turbo_frame_tag "new_message" do %>
+            <%= link_to new_channel_message_path(@channel), data: {turbo_frame: "new_message"} do %>
+              <span style="color: lightslategray">Ajouter une nouveau message</span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+            <div class="container__messages">
+              <%= turbo_frame_tag :messages do %>
+            <%= turbo_stream_from @channel, :messages %>
+              <% @messages.each do |message| %>
+                  <%= render 'messages/message', message: message %>
+            <% end %>
+              <% end %>
+            </div>
+    </section>
+  </div>
+</div>

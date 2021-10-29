@@ -28,7 +28,7 @@
       <%= button_to "Inviter", call_user_path(@object.id), method: :get, :class => "actionbar__button--outline", data: {turbo_frame: "modal"} %>
   <% end %>
     <% if @forum.present? %>
-      <%= button_to "Forum", call_user_path(@object.id), method: :get, :class => "actionbar__button--outline" %>
+      <%= button_to "Forum", channel_path(@object.channel) , method: :get, :class => "actionbar__button--outline" %>
     <% end %>
   <% if @backpath.present? %>
       <%= button_to 'Retour', @backpath, method: :get, :class => "actionbar__button" %>
