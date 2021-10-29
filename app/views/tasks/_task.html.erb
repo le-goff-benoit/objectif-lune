@@ -1,9 +1,14 @@
 <%= turbo_frame_tag dom_id(task) %>
 <div class="section__elements">
-  <div class="elements__title">
-    <%= task.title %>
+  <div class="elements__action">
+    <%= button_to "✅", group_complete_task_path(task.group, task), :method => :get %>
   </div>
-  <div class="elements__value">
-    <%= task.content %>
+  <div class="elements__title" style="<%= 'text-decoration: line-through;' if task.state %>">
+    <%= task.title %>
+    <% if !task.user.nil? %>
+      <span class='pills__responsible--<%= task.group.users.find_index(task.user) %>'><%= task.user.name %></span>
+    <% else %>
+      <span class="pills__responsible">Groupe</span>
+  <% end  %>
   </div>
 </div>

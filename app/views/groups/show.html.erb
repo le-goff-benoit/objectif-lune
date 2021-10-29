@@ -17,15 +17,25 @@
     </section>
     <section>
       <div class="section__titles">
-        <h2 class="section__title">Tâches</h2>
+        <h2 class="section__title">Tâches
+        </h2>
         <h3 class="section__subtitle">Tâches actuels du groupe</h3>
       </div>
-      <%= turbo_stream_from @group, :tasks %>
-      <div id="tasks">
-          <% @tasks.each do |task| %>
+      <%= turbo_frame_tag "new_task" do %>
+        <div class="section__elements">
+          <%= link_to new_group_task_path(@group), data: {turbo_frame: "new_task"} do %>
+          <div class="elements__title" style="color: lightgrey">
+            Ajouter une nouvelle tâche
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+      <%= turbo_frame_tag :tasks do %>
+        <%= turbo_stream_from @group, :tasks %>
+        <% @tasks.each do |task| %>
             <%= render 'tasks/task', task: task, group: @group %>
           <% end %>
-      </div>
+        <% end %>
     </section>
   </div>
 </div>

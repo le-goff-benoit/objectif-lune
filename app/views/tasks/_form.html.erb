@@ -1,0 +1,12 @@
+<%= form_for [@group, @task], :html => {:class =>"form inline"} do |f|  %>
+  <div class="section__elements">
+    <div class="elements__action">
+      <%= button_to "✅", '#', :method => :get %>
+    </div>
+    <div class="elements__title" >
+      <%= f.text_field :title, autofocus: true, :class => "form__input--inline", required: true %>
+      <%= f.select :user, @group.users.map { |user| [user.name, user.id]}, {}, class: "form-control" %>
+      <%= f.submit "Ajouter" %>
+    </div>
+  </div>
+<% end %>

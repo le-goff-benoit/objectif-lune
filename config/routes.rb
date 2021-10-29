@@ -26,7 +26,11 @@ Rails.application.routes.draw do
   post 'groups/add'
   match "/groups/call/:id" => "groups#call", :via => [:get, :post], :as => 'call_user'
   post 'groups/invit'
-  resources :groups
+  resources :groups do
+    resources :tasks
+    match "/groups/tasks/complete/:id" => "tasks#complete", :via => [:get], :as => 'complete_task'
+
+  end
 
   # Devise
   devise_for :users

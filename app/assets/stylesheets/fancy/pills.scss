@@ -32,3 +32,43 @@
     background-color: #ff4141;
   }
 }
+
+.pills__responsible {
+  border: none;
+  color: white;
+  padding: 0.1rem 0.2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 0.3rem;
+  border-radius: $border-radius-button;
+  font-size: 0.8rem;
+  background-color: #999999;
+}
+
+.pills__responsible--0 {
+  @extend .pills__responsible;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: black;
+}
+
+.pills__responsible--1 {
+  @extend .pills__responsible;
+  background-color: rgba(102, 255, 0, 0.7);
+  color: black;
+}
+.pills__responsible--2 {
+  @extend .pills__responsible;
+  background-color: rgba(0, 255, 166, 0.7);
+  color: black;
+}
+.pills__responsible--3 {
+  @extend .pills__responsible;
+  background-color: rgba(140, 0, 255, 0.7);
+  color: black;
+}
+.pills__responsible--4 {
+  @extend .pills__responsible;
+  background-color: rgba(255, 89, 0, 0.7);
+  color: black;
+}

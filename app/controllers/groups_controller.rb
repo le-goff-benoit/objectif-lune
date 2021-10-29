@@ -7,7 +7,9 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @members = @group.users
-    @tasks = @group.tasks
+    @open_tasks = @group.tasks.where(:state => false).order(state: :asc, created_at: :desc)
+    @closedtasks = @group.tasks.where(:state => true).order(state: :asc, created_at: :desc).limit(5)
+    @tasks = @open_tasks + @closedtasks
   end
   def new
     @group = Group.new
