@@ -1,8 +1,5 @@
 <%= turbo_frame_tag dom_id(task) %>
 <div class="section__elements">
-  <div class="elements__action">
-    <%= button_to "✅", group_complete_task_path(task.group, task), :method => :get %>
-  </div>
   <div class="elements__title" style="<%= 'text-decoration: line-through;' if task.state %>">
     <%= task.title %>
     <% if !task.user.nil? %>
